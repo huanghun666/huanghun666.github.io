@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<style>
+  html {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    height: 100%;
+    margin: 0;
+  }
+  div {
+    box-sizing: border-box;
+  }
+  body>div:first-child {
+    border: 2px solid;
+    height: 100px;
+  }
+    body>div:last-child {
+    border: 2px solid;
+    width: 220px;
+    height: calc(100% - 100px);
+    margin-right: auto;
+  }
+  body>p {
+    margin: 0px;
+    width: calc(100% - 220px);
+    height: calc(100% - 100px);
+    border: 2px solid;
+    margin-left: auto;
+  }
+
+</style>
+<body>
+  <div></div>
+  <p>A,B  匹配满足A（和/或）B的任意元素（参见下方 同一规则集上的多个选择器）.
+     A B 匹配任意元素，满足条件：B是A的后代结点（B是A的子节点，或者A的子节点的子节点）
+      A + B 匹配任意元素，满足条件：B是A的下一个兄弟节点（AB有相同的父结点，并且B紧跟在A的后面）
+      A ~ B 匹配任意元素，满足条件：B是A之后的兄弟节点中的任意一个（AB有相同的父节点，B在A之后，但不一定是紧挨着A）</p>
+  <div></div>
+</body>
+</html>
