@@ -9,39 +9,49 @@
   html {
     height: 100%;
     margin: 0;
+    padding: 0;
   }
   body {
     height: 100%;
     margin: 0;
+    padding: 0;
   }
-  div {
+  section {
     box-sizing: border-box;
+    height: calc(100% - 100px);
+    margin: 0;
+    padding: 0;
   }
   body>div:first-child {
     border: 2px solid;
     height: 100px;
+    margin: 0;
   }
-    body>div:last-child {
+    section>p:first-child {
     border: 2px solid;
-    width: 220px;
-    height: calc(100% - 100px);
-    margin-right: auto;
+    width: 214px;
+    height: calc(100% + 100px);
+    margin: 0;
+    padding: 0px;
   }
-  body>p {
-    margin: 0px;
+   section>p:last-child {
+    border: 2px solid;
     width: calc(100% - 220px);
-    height: calc(100% - 100px);
-    border: 2px solid;
+    height: calc(100% + 100px);
     margin-left: auto;
+    margin-top: -978px;  
   }
-
 </style>
 <body>
   <div></div>
-  <p>A,B  匹配满足A（和/或）B的任意元素（参见下方 同一规则集上的多个选择器）.
+  <section>
+    <p></p>
+    <p>A,B  匹配满足A（和/或）B的任意元素
      A B 匹配任意元素，满足条件：B是A的后代结点（B是A的子节点，或者A的子节点的子节点）
-      A + B 匹配任意元素，满足条件：B是A的下一个兄弟节点（AB有相同的父结点，并且B紧跟在A的后面）
-      A ~ B 匹配任意元素，满足条件：B是A之后的兄弟节点中的任意一个（AB有相同的父节点，B在A之后，但不一定是紧挨着A）</p>
-  <div></div>
+     A > B 匹配任意元素，满足条件：B是A的直接子节点
+     A + B 匹配任意元素，满足条件：B是A的下一个兄弟节点（AB有相同的父结点，并且B紧跟在A的后面）
+     A ~ B 匹配任意元素，满足条件：B是A之后的兄弟节点中的任意一个（AB有相同的父节点，B在A之后，但不一定是紧挨着A）</p>
+   </section>
+
 </body>
 </html>
