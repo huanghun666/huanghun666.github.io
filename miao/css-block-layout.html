@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<style>
+  body>div:first-child {
+  background-color: black;
+}
+div>p {
+  color: white;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+p {
+  margin-top: 17px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.a ul {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  padding: 0px;
+}
+.a li {
+  width: 174px;
+  height: 34px;
+  border: 3px solid;
+  margin-top: 15px;
+  list-style-type: none;
+  background-color: pink;
+  line-height: 40px;
+  }
+.a ul>li:hover {
+    background-color: red;
+}
+.a ul>li:nth-child(n+5) {
+  margin-left: 209px;
+}
+.a ul>li:nth-child(4n+5) {
+  margin-top: -205px;
+}
+.a ul>li:nth-child(n+9) {
+  margin-left: 419px;
+}
+.b ul {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px;
+}
+.b li {
+  border-bottom: 1px dotted;
+  margin-bottom: -1px;
+  list-style-type: none;
+}
+ul {
+  overflow: hidden;
+}
+.c {
+  background-color: violet;
+}
+.c p{
+  text-align: center;
+}
+</style>
+<body>
+ <div>
+   <p>hello world 请调整浏览器窗口大小查看效果</p>
+ </div>
+  <p>页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px</p>
+  <div class="a">
+    <ul>
+      <li>宽180高40(包含边框)</li>
+      <li>水平间隙30px</li>
+      <li>垂直间隙15px</li>
+      <li>边框宽度3px</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>产品</li>
+    </ul>
+  </div>
+
+  <div class="b">
+    <ul>
+      <li>link</li>
+      <li>link</li>
+      <li>link</li>
+      <li>link</li>
+      <li>link</li>
+    </ul>
+  </div>
+  <div class="c">
+    <p>©版权所有 <br>本页所有布局均使用块元素</p>
+  </div>
+</body>
+</html>
