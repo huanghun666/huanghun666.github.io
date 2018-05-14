@@ -9,12 +9,11 @@
   html {
     height: 100%;
     margin: 0;
-    padding: 0;
   }
   body {
     height: 100%;
     margin: 0;
-    padding: 0;
+    overflow: hidden;
   }
 
   body>div:first-child {
@@ -34,7 +33,7 @@
     border: 2px solid;
     margin-top: calc(-100vh + 96px);
     margin-left: 220px; 
-    height: calc(100% - 100px); 
+    height: calc(100vh - 100px); 
     background-color: gray;
   }
 </style>
@@ -46,6 +45,5 @@
      A > B 匹配任意元素，满足条件：B是A的直接子节点
      A + B 匹配任意元素，满足条件：B是A的下一个兄弟节点（AB有相同的父结点，并且B紧跟在A的后面）
      A ~ B 匹配任意元素，满足条件：B是A之后的兄弟节点中的任意一个（AB有相同的父节点，B在A之后，但不一定是紧挨着A）</p>
-
 </body>
 </html>
