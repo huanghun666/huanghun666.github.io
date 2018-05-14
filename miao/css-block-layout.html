@@ -6,49 +6,63 @@
   <title>JS Bin</title>
 </head>
 <style>
-  body>div:first-child {
+  body {
+    margin: 0px;
+  }
+header {
+  padding-left: calc(50% - 300px);
+  padding-right: calc(50% - 300px);
   background-color: black;
-}
-div>p {
   color: white;
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+}
+header p {
+  margin: 0px;
 }
 p {
-  margin-top: 17px;
+  margin-top: 15px;
   width: 600px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 0px;
+}
+
+
+
+section {
+  margin-top: -15px;
+  padding: 0px;
 }
 .a ul {
   width: 600px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 15px;
   padding: 0px;
 }
 .a li {
-  width: 174px;
-  height: 34px;
+  width: 180px;
+  height: 40px;
   border: 3px solid;
   margin-top: 15px;
   list-style-type: none;
   background-color: pink;
   line-height: 40px;
+  box-sizing: border-box;
   }
 .a ul>li:hover {
     background-color: red;
 }
 .a ul>li:nth-child(n+5) {
-  margin-left: 209px;
+  margin-left: 210px;
+}
+.a ul>li:nth-child(n+9) {
+  margin-left: 420px;
 }
 .a ul>li:nth-child(4n+5) {
   margin-top: -205px;
 }
-.a ul>li:nth-child(n+9) {
-  margin-left: 419px;
-}
+
+
+
 .b ul {
   width: 600px;
   margin-left: auto;
@@ -71,26 +85,28 @@ ul {
 }
 </style>
 <body>
- <div>
+ <header >
    <p>hello world 请调整浏览器窗口大小查看效果</p>
- </div>
+ </header>
   <p>页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px</p>
-  <div class="a">
-    <ul>
-      <li>宽180高40(包含边框)</li>
-      <li>水平间隙30px</li>
-      <li>垂直间隙15px</li>
-      <li>边框宽度3px</li>
-      <li>产品</li>
-      <li>产品</li>
-      <li>产品</li>
-      <li>产品</li>
-      <li>产品</li>
-      <li>产品</li>
-      <li>产品</li>
-      <li>产品</li>
-    </ul>
-  </div>
+  <section>
+    <div class="a">
+      <ul>
+        <li>宽180高40(包含边框)</li>
+        <li>水平间隙30px</li>
+        <li>垂直间隙15px</li>
+        <li>边框宽度3px</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+        <li>产品</li>
+      </ul>
+    </div>
+  </section>
 
   <div class="b">
     <ul>
