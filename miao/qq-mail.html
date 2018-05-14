@@ -6,36 +6,31 @@
   <title>JS Bin</title>
 </head>
 <style>
-  html {
+  html, body {
     height: 100%;
     margin: 0;
   }
-  body {
-    height: 100%;
-    margin: 0;
-  }
-
-  body>div:first-child {
-    border: 2px solid;
+  div {
+    border-bottom: 2px solid;
     height: 100px;
     margin: 0;
     background-color: yellow;
   }
     section {
-    border: 2px solid;
-    width: 216px;
+    border-right: 2px solid;
+    width: 220px;
     height: calc(100% - 100px);
     margin-right: auto;
     background-color: pink;
+    box-sizing: border-box;
   }
    p {
-    border: 2px solid;
-    margin-top: calc(-100vh + 96px);
+    margin-top: calc(-100vh + 100px);
     margin-left: 220px; 
-    height: calc(100vh - 100px); 
+    height: calc(100% - 100px); 
     background-color: gray;
     overflow: auto;
-  }
+   }
 </style>
 <body>
   <div></div>
