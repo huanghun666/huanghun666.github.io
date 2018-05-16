@@ -1,112 +1,136 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+  </head>
 <style>
   body {
     margin: 0px;
   }
-header {
-  padding-left: calc(50% - 300px);
-  padding-right: calc(50% - 300px);
-  background-color: black;
-  color: white;
-}
-header p {
-  margin: 0px;
-}
-p {
-  margin-top: 15px;
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0px;
-}
-
-
-
-section {
-  margin-top: -15px;
-  padding: 0px;
-}
-.a ul {
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0px;
-}
-.a li {
-  width: 180px;
-  height: 40px;
-  border: 3px solid;
-  margin-top: 15px;
-  list-style-type: none;
-  background-color: pink;
-  line-height: 40px;
-  box-sizing: border-box;
+  header {
+    padding-left: calc(50% - 300px);
+    padding-right: calc(50% - 300px);
+    background-color: black;
+    color: white;
   }
-.a ul>li:hover {
-    background-color: red;
-}
-.a ul>li:nth-child(n+5) {
-  margin-left: 210px;
-}
-.a ul>li:nth-child(n+9) {
-  margin-left: 420px;
-}
-.a ul>li:nth-child(4n+5) {
-  margin-top: -205px;
-}
+  header p {
+    margin: 0px;
+  }
+  p {
+    margin-top: 15px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+  }
 
+  /* section {
+    margin-top: -15px;
+    padding: 0px;
+  }
+  .a ul {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+  }
+  .a li {
+    width: 180px;
+    height: 40px;
+    border: 3px solid;
+    margin-top: 15px;
+    list-style-type: none;
+    background-color: pink;
+    line-height: 40px;
+    box-sizing: border-box;
+    }
+  .a ul>li:hover {
+      background-color: red;
+  }
+  .a ul>li:nth-child(n+5) {
+    margin-left: 210px;
+  }
+  .a ul>li:nth-child(n+9) {
+    margin-left: 420px;
+  }
+  .a ul>li:nth-child(4n+5) {
+    margin-top: -205px;
+  } */
 
+  section {
+    margin-top: -15px;
+    padding: 0px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+  }
+  .a ul {
+    padding: 0px;
+  }
+  .a li {
+    width: 180px;
+    height: 40px;
+    border: 3px solid;
+    margin-top: 15px;
+    list-style-type: none;
+    background-color: pink;
+    line-height: 40px;
+    box-sizing: border-box;
+    display: inline-block;
+  }
+  .a li:last-child {
+    visibility: hidden;
+  }
 
-.b ul {
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0px;
-}
-.b li {
-  border-bottom: 1px dotted;
-  margin-bottom: -1px;
-  list-style-type: none;
-}
-ul {
-  overflow: hidden;
-}
-.c {
-  background-color: violet;
-}
-.c p{
-  text-align: center;
-}
+  .b ul {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    margin-top: -60px;
+  }
+  .b li {
+    border-bottom: 1px dotted;
+    margin-bottom: -1px;
+    list-style-type: none;
+  }
+  ul {
+    overflow: hidden;
+  }
+  .c {
+    background-color: violet;
+  }
+  .c p{
+    text-align: center;
+  }
 </style>
 <body>
  <header >
    <p>hello world 请调整浏览器窗口大小查看效果</p>
  </header>
   <p>页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px</p>
-  <section>
-    <div class="a">
-      <ul>
-        <li>宽180高40(包含边框)</li>
-        <li>水平间隙30px</li>
-        <li>垂直间隙15px</li>
-        <li>边框宽度3px</li>
-        <li>产品</li>
-        <li>产品</li>
-        <li>产品</li>
-        <li>产品</li>
-        <li>产品</li>
-        <li>产品</li>
-        <li>产品</li>
-        <li>产品</li>
-      </ul>
-    </div>
-  </section>
+<section>
+  <div class="a">
+    <ul>
+      <li>宽180高40(包含边框)</li>
+      <li>水平间隙30px</li>
+      <li>垂直间隙15px</li>
+      <li>边框宽度3px</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li>产品</li>
+      <li></li>
+    </ul>
+  </div>
+</section>
 
   <div class="b">
     <ul>
