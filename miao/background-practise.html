@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<style>
+  html,body {
+    height: 100%;
+  }
+  * {
+    margin: 0px;
+  }
+  body {
+    width: 100%;
+    height: 100%;
+    background-image: url(yemianbg.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+  .e:hover {
+    background-position: -50px 0;
+  }
+  .e {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 100px;
+    transition: background-position .5s;
+    background-image: url(ping.png);
+  }
+  .f {
+    width: 270px;
+    height: 70px;
+    display: inline-block;
+    background-position: 80px -80px;
+    background-repeat: no-repeat;
+    background-image: url(jietu.png);
+  }
+  .g {
+    width: 400px;
+    height: 90px;
+    display: inline-block;
+    background-position: -260px -78px;
+    background-repeat: no-repeat;
+    background-image: url(jietu.png);
+  }
+
+  p {
+    height: 100vh;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .a {
+    background-image: url(1.png);
+  }
+  .b {
+    background-image: url(2.png);
+  }
+  .c {
+    background-image: url(3.png);
+  }
+  .d {
+    width: 1500px;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid;
+    border-color: yellow;
+    background-image: url(wenzhanbg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    font-size: 35px;
+    color: green;
+  }
+</style>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>Document</title>
+  <meta http-equiv="refresh" content="6"/></meta>
+</head>
+<body>
+  <div class="e"></div>
+  <div class="f"></div>
+  <div class="g"></div>
+  <div class="d" >
+    Before you start, make sure you're viewing this page in one of the browsers mentioned above. Otherwise the descriptions to follow won't match what you .
+    <br />
+    The first, easiest thing to do is scroll the page vertically. Make sure you scroll all the way to the very end of the page and back. Notice how the various areas with colored backgrounds also appear to distort the background image as if through mottled glass. Try changing the text size and notice how the compositing effect remains consistent. Then make your browser window really narrow and scroll horizontally. Again, everything should remain seamless and consistent.
+    <br />
+    The demonstrated effect, that of having various elements backed with translucent rippled glass of varying hues, is only possible using fixed-attachment backgrounds in CSS. (Okay, maybe it could be done in Flash; I don't know.) I don't think it's even possible with IE's proprietary filters, but even if this effect is possible with filters, I could easily enough devise one that isn't.</div>
+  <p class="a"></p>
+  <p class="b"></p>
+  <p class="c"></p>
+</body>
+</html>
