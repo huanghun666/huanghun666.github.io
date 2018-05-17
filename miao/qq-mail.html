@@ -16,7 +16,8 @@
     margin: 0;
     background-color: yellow;
   }
-    section {
+  /* 
+  section {
     border-right: 2px solid;
     width: 220px;
     height: calc(100% - 100px);
@@ -24,21 +25,40 @@
     background-color: pink;
     box-sizing: border-box;
   }
-   p {
-    margin-top: calc(-100vh + 100px);
+  p {
     margin-left: 220px; 
-    height: calc(100% - 100px); 
+    height: calc(100% - 100px);
+    margin-top: calc(-100vh + 100px);
     background-color: gray;
     overflow: auto;
+   } */
+   section {
+    border-right: 2px solid;
+    width: 220px;
+    height: calc(100% - 100px);
+    margin-right: auto;
+    background-color: pink;
+    box-sizing: border-box;
+    display: inline-block;
    }
+   p {
+    height: calc(100% - 100px);
+    width: calc(100% - 220px);
+    display: inline-block;
+    background-color: gray;
+    overflow: auto;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+   }
+   /* section标签与p标签换行缩进之间存在空格（也是字符）导致宽度对不齐，所以p标签会跑到下面去。*/
 </style>
 <body>
   <div></div>
-  <section></section>
-  <p>A,B  匹配满足A（和/或）B的任意元素
-     A B 匹配任意元素，满足条件：B是A的后代结点（B是A的子节点，或者A的子节点的子节点）
-     A > B 匹配任意元素，满足条件：B是A的直接子节点
-     A + B 匹配任意元素，满足条件：B是A的下一个兄弟节点（AB有相同的父结点，并且B紧跟在A的后面）
-     A ~ B 匹配任意元素，满足条件：B是A之后的兄弟节点中的任意一个（AB有相同的父节点，B在A之后，但不一定是紧挨着A）</p>
+    <section></section><p>A,B  匹配满足A（和/或）B的任意元素
+           A B 匹配任意元素，满足条件：B是A的后代结点（B是A的子节点，或者A的子节点的子节点）
+           A > B 匹配任意元素，满足条件：B是A的直接子节点
+           A + B 匹配任意元素，满足条件：B是A的下一个兄弟节点（AB有相同的父结点，并且B紧跟在A的后面）
+           A ~ B 匹配任意元素，满足条件：B是A之后的兄弟节点中的任意一个（AB有相同的父节点，B在A之后，但不一定是紧挨着A）</p>
 </body>
 </html>
