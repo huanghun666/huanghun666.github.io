@@ -7,8 +7,9 @@
   <title>按钮</title>
 </head>
     <style>
-      * ｛
-      ｝
+      * {
+        margin: 0px;
+      }
       input {
         display: none;
       }
@@ -44,7 +45,7 @@
         left: 244px;
         transition-duration: .75s;
       }
-      input:checked + label {
+      input#ti:checked + label {
         background-color:rgba(26, 241, 19, 0.931);
         transition-duration: .75s;
         transition-timing-function: cubic-bezier(.48,.04,.66,.37); 
@@ -64,6 +65,8 @@
         width: 100px;
         background-repeat: no-repeat;
         background-image: url(https://abs.twimg.com/a/1526339738/img/animations/web_heart_animation_edge.png);
+        display: inline-block;
+
       }
       input#dian:checked + label>p {
         background-position: right;
