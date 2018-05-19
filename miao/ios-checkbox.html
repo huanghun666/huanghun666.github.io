@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>按钮</title>
+</head>
+    <style>
+      * ｛
+      ｝
+      input {
+        display: none;
+      }
+      /* 按钮滑动 */
+      [for="ti"] {
+        width: 400px;
+        height: 170px;
+        border-radius: 9999px;
+        background-color:rgba(184, 181, 181, 0.863);/*lable灰色 */
+        display: inline-block;
+        position: relative;
+      }
+      div {
+        width: 150px;
+        height: 150px;
+        border-radius: 99999px;
+        background-color: rgba(241, 249, 255, 0.883);/*浅蓝色 */
+        box-shadow: 0 3px 3px 4px gray;
+        position: absolute; 
+        left: 6px;
+        top: 8px;
+      }
+      span {
+        width: 400px;
+        height: 170px;
+        border-radius: 99999px;
+        display: inline-block;
+        position: absolute; 
+        left: 0px;
+        top: 0px;
+      }
+      input:checked + label>div{
+        left: 244px;
+        transition-duration: .75s;
+      }
+      input:checked + label {
+        background-color:rgba(26, 241, 19, 0.931);
+        transition-duration: .75s;
+        transition-timing-function: cubic-bezier(.48,.04,.66,.37); 
+      }
+      input:checked +label>span {
+        width: 150px;
+        height: 150px;
+        border-radius: 99999px;
+        left: 244px;
+        top: 8px;
+        background-color:rgba(255,255,255,0.25);
+        transition-duration: .75s;
+      }
+      /* 点赞 */
+      p {
+        height: 100px;
+        width: 100px;
+        background-repeat: no-repeat;
+        background-image: url(https://abs.twimg.com/a/1526339738/img/animations/web_heart_animation_edge.png);
+      }
+      input#dian:checked + label>p {
+        background-position: right;
+        transition-duration: .5s;
+        transition-timing-function: steps(28);
+      }
+    </style>
+<body>
+  <input type="checkbox" id="ti">
+  <label for="ti"><span></span><div></div></label>
+  <hr>
+  <input type="checkbox" id="dian">
+  <label for="dian"><p></p></label>
+</body>
+</html>
