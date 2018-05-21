@@ -13,12 +13,13 @@
       input {
         display: none;
       }
-      /* 按钮滑动 */
+      
+      /*
       [for="ti"] {
         width: 400px;
         height: 170px;
         border-radius: 9999px;
-        background-color:rgba(184, 181, 181, 0.863);/*lable灰色 */
+        background-color:rgba(184, 181, 181, 0.863);
         display: inline-block;
         position: relative;
       }
@@ -26,7 +27,7 @@
         width: 150px;
         height: 150px;
         border-radius: 99999px;
-        background-color: rgba(241, 249, 255, 0.883);/*浅蓝色 */
+        background-color: rgba(241, 249, 255, 0.883);
         box-shadow: 0 3px 3px 4px gray;
         position: absolute; 
         left: 6px;
@@ -59,6 +60,43 @@
         background-color:rgba(255,255,255,0.25);
         transition-duration: .75s;
       }
+        以下为较优解 */
+       input#ti + label {
+        width: 60px;
+        height: 30px;
+        border-radius: 9999px;
+        background-color:rgba(184, 181, 181, 0.863);
+        padding: 2px;
+        display: inline-block;
+        position: relative;
+        transition: box-shadow .5s;
+        cursor: pointer;
+        box-shadow: 0 0 0 0px #6edc5f inset;
+
+      }
+
+      input#ti + label::before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        border-radius: 99999px;
+        background-color: rgba(241, 249, 255, 0.883);
+        box-shadow: 0 0 3px 0 gray;
+        position: absolute; 
+        transition: margin-left .5s;
+        
+      }
+      input#ti:checked + label {
+        box-shadow: 0 0 0 20px #6edc5f inset;
+      }
+
+      input#ti:checked + label::before {
+        margin-left: 30px;
+      }
+
+
+
+
       /* 点赞 */
       p {
         height: 100px;
@@ -72,11 +110,13 @@
         background-position: right;
         transition-duration: .5s;
         transition-timing-function: steps(28);
+        /*background-position: -2800px 0;
+        transition: .466666666s linear;*/
       }
     </style>
 <body>
   <input type="checkbox" id="ti">
-  <label for="ti"><span></span><div></div></label>
+  <label for="ti"></label>
   <hr>
   <input type="checkbox" id="dian">
   <label for="dian"><p></p></label>
