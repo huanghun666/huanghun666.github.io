@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+    /* 只用一种元素 */
+    div {
+      display: table-cell;
+      width: 220px;
+      height: 150px;
+      vertical-align: bottom;
+      background-color: #A0D0E0;
+      border-bottom: 3px solid red;
+      cursor: pointer;
+    } 
+    body>div:hover {
+      font-size: 50px;
+      background-color: #6edc5f;
+      transition: background-color 0.0001ms 2.9s,font-size 3s;
+    }
+    /* (伪元素实现) 
+    div {
+      height: 150px;
+      width: 230px;
+      border-bottom: 4px solid;
+      border-bottom-color: red;
+      background-color: #A0D0E0; 
+      cursor: pointer;
+      position: relative;
+      transition-property: background-color;
+      transition-duration: 3s;
+      transition-delay: 2.9s
+    }
+    div::before {
+      content:'订阅博客';
+      position: absolute;
+      bottom: 0px;
+      font-size: 16px;
+    }
+    div:hover {
+      background-color: #6edc5f;
+    }
+    div:hover::before {
+      font-size: 50px;
+      transition: font-size 3s;
+    }
+    */
+    
+    table {
+      border-collapse: collapse;
+      width: 300px;
+      height: 300px;
+    }
+    col,tr {
+      border: 8px solid blue;
+    }
+    td {
+      text-align: center;
+      color: green;
+    }
+    td:hover {
+      border: 8px solid red;/*  要有样式才生效而且此时的td的border的宽度要比优先级比它低的tr th宽（这样边框才不会合并，宽的边框生效）。*/
+    }
+     /*喵讲的其他方法
+      (边框样式优先级)
+    table {
+      border-collapse: collapse;
+      width: 300px;
+      height: 300px;
+    }
+    td {
+      text-align: center;
+      border: 8px ridge blue;
+    }
+    td:hover {
+      border: 8px solid red;
+    } 
+
+      （z-index结合box-shadow）
+    table {
+      border-collapse: collapse;
+      width: 300px;
+      height: 300px;
+    }
+    td {
+      text-align: center;
+      box-shadow: 0 0 0 5px blue;
+    }
+    td:hover {
+      box-shadow: 0 0 0 8px red;
+      z-index: 100px;
+      position: relative;
+    }  
+    同理可得用行内块元素可做，li display： inline-block; li margin设置为负的使其重合为九宫格，li hover时通过定位 z-index: 999;浮于之上就可。
+    浮动也可 实现。
+    */
+      
+    /* 页脚滚动效果  */
+    /* 方法一：通过让一个元素设置成最小高度为100%，让页脚定位在最下方 */
+    html {
+      height: 100%;
+      width: 100%;
+    }
+    body {
+      position: relative;
+      padding-bottom: 40px;
+      min-height: 100%;
+    }
+    h1,p {
+      width: 600px;
+      margin: auto;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background-color: rgb(245 245 245);
+      width: 100%;
+      height: 40px;
+      position: absolute;
+      bottom: 0;
+    }
+    span {
+      width: 600px;
+      margin: auto;
+      display: block;
+    }
+
+    /* 讲完扩充 */
+    /* 方法二：跟方法一相反 */
+    /* <body>
+        <div></div>
+          <footer>this is footer!</footer>
+       </body>
+
+       div {
+        min-height: calc(100% - 100px);
+       }
+       footer {
+        height: 100px;
+       }
+    */
+   
+
+    
+
+  </style>
+<body>
+  <div>订阅博客</div>
+    <table>
+      <col>
+      <col>
+      <col>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+          </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <br>
+    <br>
+
+    <section>
+      <h1>Sticky footer</h1>
+      <p>Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS.</p>
+      <p>Use <a href="http://getbootstrap.com/docs/4.1/examples/sticky-footer-navbar/">the sticky footer with a fixed navbar</a> if need be, too.</p>
+      <footer><span>Place sticky footer content here.</span></footer>
+    </section>
+</body>
+</html>
