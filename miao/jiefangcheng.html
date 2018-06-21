@@ -1,0 +1,65 @@
+<script type="text/javascript">
+  var a = +prompt('a:')
+  var b = +prompt('b:')
+  var c = +prompt('c:')
+  var d = 2*a
+
+  var delta = b*b - 4 * a * c
+  var x1 = (-b + s_delta) / (2 *a)
+  var x2 = (-b - s_delta) / (2 *a)
+  var x = (-b) / (2 *a)
+
+  if (delta>0) {
+    var s_delta = Math.sqrt(delta)
+    console.log(x1)
+    console.log(x2)
+  } else {
+      if (delta === 0) {
+        var s_delta = Math.sqrt(delta)
+        console.log(x)
+      } else {
+          if(delta<0) {
+            var s_delta = Math.sqrt(-delta)
+            var x3 = (-b +'+' + (s_delta + "i")) + "/" +d
+            var x4 = (-b + '-' + (s_delta + "i")) + "/" +d
+            console.log(x3)
+            console.log(x4)
+          }
+        }
+    }
+
+
+
+    
+//   二元一次方程  //
+
+
+
+  var a = +prompt('a:')
+  var b = +prompt('b:')
+  var c = +prompt('c:') 
+  var d = +prompt('d:')
+  var e = +prompt('e:')
+  var f = +prompt('f:')
+  var x = (c*e - f*b)/(a*e - d*b)
+  var y = (d*b - e*a)/(c*d - f*a)
+  var u = a*e - d*b
+  var o = c*d - f*a
+  if (u != 0) {
+    alert(x)
+    alert(y)
+  } else{
+      if ((u == 0) && (o == 0)) {
+        alert("有无穷个解")
+  } else {
+      if ((u == 0) && (o != 0)) {
+        alert("无解")
+      }
+    }
+  }
+
+
+
+
+
+</script>
