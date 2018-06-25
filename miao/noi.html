@@ -13,18 +13,20 @@
     var s = +prompt("请给a")
     var b = +prompt("请给b")
     var c = +prompt("请给c")
-    console.log((s+b) / c)
+    var d = (s+b) / c
+    console.log(parseInt(d))
 </script>
 <script id="ch0103/04">
     var s = +prompt("请给a")
     var b = +prompt("请给b")
-    console.log((s+b) / c)
+    var c =s / b
+    console.log(parseInt(c) + " " + (s % b))
 </script>
 <script id="ch0103/05">
     var s = +prompt("请给a")
     var b = +prompt("请给b")
-    var c =s / b
-    console.log(parseInt(c) + " " + (s % b))
+    var c = s / b
+    console.log(c.toFixed(9))
 </script>
 <script id="ch0103/06">
     var s = +prompt("请给a")
@@ -33,11 +35,11 @@
     console.log((c*100).toFixed(3) + "%")
 </script>
 <script id="ch0103/07">
+  var x = +prompt('x:')
   var a = +prompt('a:')
   var b = +prompt('b:')
   var c = +prompt('c:') 
   var d = +prompt('d:')
-  var x = +prompt('x:')
   var a_n = a * (x * x * x)
   var b_n = b * (x * x)
   var x_n = (a_n) + (b_n) + (c * x) + d
@@ -76,7 +78,7 @@
   var ge = x % 10
   var shi = parseInt(x / 10) % 10
   var bai = parseInt(x / 100) % 10
-  console.log(" " + ge + shi + bai)
+  console.log("" + ge + shi + bai)
 </script>
 <script id="ch0103/14">
   var h = +prompt('h:')
