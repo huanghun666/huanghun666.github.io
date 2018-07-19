@@ -42,7 +42,7 @@ var huanghun666 = {
     return array.filter(item => !copyvalue(init(item)))
   },
 
-  iteratee: function(sorthand) {
+  iteratee: function(sorthand =huanghun666.iteratee) {
     if (typeof sorthand === "function") {
       return sorthand
     }
@@ -50,7 +50,7 @@ var huanghun666 = {
       return this.matches(sorthand)
     }
     if (Array.isArray(sorthand)) {
-      return matchesProperty(sorthand)
+      return this.matchesProperty(sorthand)
     }
     if (typeof sorthand === "object") {
       return this.matches(sorthand)
@@ -104,9 +104,8 @@ var huanghun666 = {
   },
 
   matchesProperty: function(path, srcValue) {
-    return function(obj) {
-
-    }
+   var ary = [].concat(path, srcValue)
+   return matches(fromPairs([ary]))
   },
 
   sumBy: function(array, iteratee= huanghun666.identity) {
