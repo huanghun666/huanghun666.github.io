@@ -47,13 +47,13 @@ var huanghun666 = {
       return sorthand
     }
     if (typeof sorthand === "string") {
-      return matches(sorthand)
+      return this.matches(sorthand)
     }
     if (Array.isArray(sorthand)) {
       return matchesProperty(sorthand)
     }
     if (typeof sorthand === "object") {
-      return matches(sorthand)
+      return this.matches(sorthand)
     }
   },
   drop:function(array,n=1) {
@@ -85,17 +85,17 @@ var huanghun666 = {
     if (depth === 0) {
       return ary.slice()
     }
-    var result = []
+    var res = []
 
     for(var i = 0;i<ary.length;i++) {
       if (Array.isArray(ary[i])) {
         var tmp = this.flattenDepth(ary[i], depth - 1)
-        result = [...tmp]
+        res = [...res...tmp]
       } else {
-        result.push(ary[i])
+        res.push(ary[i])
       }
     }
-    return result
+    return res
   },
 
 
@@ -135,6 +135,7 @@ var huanghun666 = {
         return true
     }
   },
+
   property: function(path) {
     return function(obj) {
       return obj[path]
@@ -145,8 +146,48 @@ var huanghun666 = {
         return !func()
       }
   },
-  
+  groupBy:function(ary, predicate) {
+    var map = {}
 
+    for(var item of ary) {
+      var key = predicate(item)
+      if (key in map) {
+        map[key].push(item)
+      } else {
+        map[key] = [item]
+      }
+    }
 
+      return map
+  },
+
+  flip: function(func) {
+      return function(...args) {
+        return func(...args.reverse())
+      }
+  },
+  bind: function(func,...args) {
+      return function(...fixedargs) {
+        return func(...fixedargs,...args)
+      }
+  }，
+  after: function(n,func) {
+    var conter =0
+      return function() {
+        conter++
+        if (c>=n) {
+          return func()
+        }
+      }
+  },
+  before: function(n,func) {
+    var conter =0
+      return function() {
+        conter++
+        if (c>=n) {
+          return func()
+        }
+      }
+  },
 
 }
