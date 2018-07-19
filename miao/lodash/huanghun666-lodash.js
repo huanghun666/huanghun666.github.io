@@ -36,9 +36,9 @@ var huanghun666 = {
     return array.filter(item => ![].concat(...values).includes(item))
   },
 
-  differenceBy: function(array, values, iteratee) {
+  differenceBy: function(array, values, iteratee= huanghun666.identity) {
     var init = huanghun666.iteratee(iteratee)
-    let copyvalue = values.map(item =>init(item))
+    var copyvalue = values.map(item =>init(item))
     return array.filter(item => !copyvalue(init(item)))
   },
 
@@ -83,7 +83,7 @@ var huanghun666 = {
 
   flattenDepth: function(ary, depth = 1) {
     if (depth === 0) {
-      return ary.slice(...ary)
+      return ary.slice()
     }
     var result = []
 
@@ -120,6 +120,7 @@ var huanghun666 = {
   sum: function(array) {
     return this.sumBy(array,item =>item)
   },
+
   identity: function(value) {
     return value
   },
