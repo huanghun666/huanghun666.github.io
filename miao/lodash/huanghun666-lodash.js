@@ -8,7 +8,7 @@ var huanghun666 = {
     return result
   },
 
-  compect: function(array) {
+  compact: function(array) {
     var result = []
     for (var i =0; i <array.length; i++) {
       if (Boolean(array[i])) {
@@ -24,7 +24,7 @@ var huanghun666 = {
     }
     for(var item of value) {
       if(Array.isArray(item)) {
-        result.push(item)
+        result.push(...item)
       }else {
         result.push(item)
       }
@@ -55,6 +55,12 @@ var huanghun666 = {
     if (typeof sorthand === "object") {
       return matches(sorthand)
     }
+  },
+  drop:function(array,n=1) {
+    return array.slice(n)
+  },
+  drop:function(array,n=1) {
+    return array.reverse().slice()
   },
   matchesProperty: function(path, srcValue) {
     return function(obj) {
