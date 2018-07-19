@@ -60,7 +60,7 @@ var huanghun666 = {
     return array.slice(n)
   },
   dropRight:function(array,n=1) {
-    return array.reverse().slice(n)
+    return array.reverse().slice(n).reverse()
   },
 
   
@@ -78,7 +78,7 @@ var huanghun666 = {
 
 
   flattenDeep: function(array) {
-    return this.flattenDepth(array, 0)
+    return this.flattenDepth(array, Infinity)
   },
 
   flattenDepth: function(ary, depth = 1) {
@@ -90,7 +90,7 @@ var huanghun666 = {
     for(var i = 0;i<ary.length;i++) {
       if (Array.isArray(ary[i])) {
         var tmp = this.flattenDepth(ary[i], depth - 1)
-        result = [...result, ...tmp]
+        result = [...tmp]
       } else {
         result.push(ary[i])
       }
@@ -109,16 +109,16 @@ var huanghun666 = {
     }
   },
 
-  sumBy: function(array, iteratee) {
+  sumBy: function(array, iteratee= huanghun666.identity) {
     var result = 0
     for (var i = 0; i <array.length; i++) {
-      result += this.iteratee(array[i])
+      result += iteratee(array[i])
     }
     return result
   },
 
   sum: function(array) {
-    return this.sumBy(array,item =>item)
+    return sumBy(array,item =>item)
   },
 
   matches: function(src) {
