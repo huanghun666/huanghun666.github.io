@@ -112,13 +112,16 @@ var huanghun666 = {
   sumBy: function(array, iteratee= huanghun666.identity) {
     var result = 0
     for (var i = 0; i <array.length; i++) {
-      result += iteratee(array[i])
+      result += this.iteratee(array[i])
     }
     return result
   },
 
   sum: function(array) {
-    return sumBy(array,item =>item)
+    return this.sumBy(array,item =>item)
+  },
+  identity: function(value) {
+    return value
   },
 
   matches: function(src) {
@@ -129,6 +132,11 @@ var huanghun666 = {
         }
       }
         return true
+    }
+  },
+  property: function(path) {
+    return function(obj) {
+      return obj[path]
     }
   },
   negate: function(func) {
