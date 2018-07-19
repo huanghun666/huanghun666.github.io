@@ -59,9 +59,38 @@ var huanghun666 = {
   drop:function(array,n=1) {
     return array.slice(n)
   },
-  drop:function(array,n=1) {
+  dropRight:function(array,n=1) {
     return array.reverse().slice()
   },
+  fill:function(array, value, start=0, end=array.length) {
+    for (var i = start; i <end; i++) {
+      array[i] =value
+    }
+      return array
+  },
+  flatten: function(array) {
+    return [].concat(...array)
+  },
+  flattenDeep: function(array) {
+    return this.flattenDepth(array, 0)
+  },
+  flattenDepth: function(ary, depth = 1) {
+    if (depth === 0) {
+      return ary.slice()//[...ary]
+    }
+    var result = []
+
+    for(var i = 0;i<ary.length;i++) {
+      if (Array.isArray(ary[i])) {
+        var tmp = flattenDepth(ary[i], depth - 1)
+        result = [...result, ...tmp]
+      } else {
+        result.push(ary[i])
+      }
+    }
+    return result
+  },
+
   matchesProperty: function(path, srcValue) {
     return function(obj) {
 
@@ -71,7 +100,7 @@ var huanghun666 = {
   sumBy: function(array, iteratee) {
     var result = 0
     for (var i = 0; i <array.length; i++) {
-      result += this.iteratee(array[i])
+      result += iteratee(array[i])
     }
     return result
   },
