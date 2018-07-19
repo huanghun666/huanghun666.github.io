@@ -170,7 +170,8 @@ var huanghun666 = {
       return function(...fixedargs) {
         return func(...fixedargs,...args)
       }
-  }，
+  },
+
   after: function(n,func) {
     var conter =0
       return function() {
