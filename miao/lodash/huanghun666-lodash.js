@@ -90,7 +90,7 @@ var huanghun666 = {
     for(var i = 0;i<ary.length;i++) {
       if (Array.isArray(ary[i])) {
         var tmp = this.flattenDepth(ary[i], depth - 1)
-        res = [...res...tmp]
+        res = [...res,...tmp]
       } else {
         res.push(ary[i])
       }
