@@ -133,6 +133,7 @@ var huanghun666 = {
 
   sumBy: function(array, iteratee= huanghun666.identity) {
     var result = 0
+    iteratee = this.iteratee(iteratee)
     for (var i = 0; i <array.length; i++) {
       result += this.iteratee(array[i])
     }
