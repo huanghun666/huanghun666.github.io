@@ -42,7 +42,7 @@ var huanghun666 = {
     return array.filter(item => !copyvalue(init(item)))
   },
 
-  iteratee: function(sorthand =huanghun666.identity) {
+  iteratee: function(sorthand = huanghun666.identity) {
     if (typeof sorthand === "function") {
       return sorthand
     }
@@ -133,9 +133,9 @@ var huanghun666 = {
 
   sumBy: function(array, iteratee= huanghun666.identity) {
     var result = 0
-    iteratee = this.iteratee(iteratee)
+    iteratee = huanghun666.iteratee(iteratee)
     for (var i = 0; i <array.length; i++) {
-      result += this.iteratee(array[i])
+      result += iteratee(array[i])
     }
     return result
   },
