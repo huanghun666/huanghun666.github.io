@@ -107,6 +107,24 @@ var huanghun666 = {
     }
       return result
   },
+  head: function(array) {
+    return array[0]
+  },
+  indexOf: function(array, value, fromIndex=0) {
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] === value) {
+        return i
+      }
+    }
+     return -1
+  },
+  initial: function(array) {
+    var result= array.splice(array.length-1,1)
+    return array
+  },
+  intersection:function(...arrays) {
+    
+  },
 
   matchesProperty: function(path, srcValue) {
    var ary = [].concat(path, srcValue)
