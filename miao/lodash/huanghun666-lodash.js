@@ -41,6 +41,14 @@ var huanghun666 = {
     var valuetwo = values.map(it => init(it))
     return array.filter(item => !valuetwo(init(item)))
   },
+  differenceWith: function(array, values, comparator) {
+      return array.filter(function(item) {
+        for (var i = 0; i < values.length; i++) {
+            return !comparator(item, values[i])
+        }
+    })
+  },
+
 
   iteratee: function(sorthand = huanghun666.identity) {
     if (typeof sorthand === "function") {
@@ -62,6 +70,23 @@ var huanghun666 = {
   },
   dropRight:function(array,n=1) {
     return array.reverse().slice(n).reverse()
+  },
+  dropRightWhile: function(array, predicate=huanghun666.identity) {
+    var temp = this.iteratee(predicate)
+    for (var i = array.length-1; i >= 0; i--) {
+      if (!temp(array[i])) {
+        return array.splice(0,i+1)//i以后都是真值。。。
+      }
+    }
+  },
+  
+  dropWhile: function(array, predicate=huanghun666.identity) {
+    var temp = this.iteratee(predicate)
+    for (var i = array.length-1; i >= 0; i--) {
+      if (!temp(array[i])) {
+        return array.splice(i)//i以后都是假值。。。
+      }
+    }
   },
 
   
