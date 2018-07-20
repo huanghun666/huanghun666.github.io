@@ -56,6 +56,7 @@ var huanghun666 = {
       return this.matches(sorthand)
     }
   },
+  
   drop:function(array,n=1) {
     return array.slice(n)
   },
@@ -100,12 +101,16 @@ var huanghun666 = {
 
 
   fromPairs: function(pairs) {
-
+    var result ={}
+    for (var i = 0; i <pairs.length; i++) {
+      result[pairs[i][0]] = pairs[i][1]
+    }
+      return result
   },
 
   matchesProperty: function(path, srcValue) {
    var ary = [].concat(path, srcValue)
-   return matches(fromPairs([ary]))
+   return this.matches(this.fromPairs([ary]))
   },
 
   sumBy: function(array, iteratee= huanghun666.identity) {

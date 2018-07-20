@@ -1,35 +1,4 @@
-<script type="xxx">
-    var differenceBy= function(array, values, iteratee) {
-    let init = iteratee(iteratee)
-    let copyvalue = values.map(item =>init(item))
-    return array.filter(item => !copyvalue(init(item)))
-  };
-       console.log(differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor))
-</script>
-<script type="xxx">
-  var iteratee= function(sorthand) {
-    if (typeof sorthand === "function") {
-      return sorthand
-    }
-    if (typeof sorthand === "string") {
-      return matches(sorthand)
-    }
-    if (Array.isArray(sorthand)) {
-      return matchesProperty(sorthand)
-    }
-    if (typeof sorthand === "object") {
-      return matches(sorthand)
-    }
 
-  };
-</script>
-<script type="text/javascript">
-  var dropRight=function(array,n=1) {
-    debugger
-    return array.reverse().slice(n).reverse()
-  };
-   console.log(dropRight([1, 2, 3], 0))
-</script>
 
 
 
