@@ -82,7 +82,7 @@ var huanghun666 = {
   
   dropWhile: function(array, predicate=huanghun666.identity) {
     var temp = this.iteratee(predicate)
-    for (var i = array.length-1; i >= 0; i--) {
+    for (var i = 0; i <array.length; i++) {
       if (!temp(array[i])) {
         return array.splice(i)//i以后都是假值。。。
       }
@@ -95,6 +95,23 @@ var huanghun666 = {
       array[i] =value
     }
       return array
+  },
+  findIndex:function(array, predicate=huanghun666.identity, fromIndex=0) {
+        var temp = this.iteratee(predicate)
+    for (var i = fromIndex; i <array.length; i++) {
+      if (temp(array[i])) {
+        return i
+      }
+    }
+  },
+  findLastIndex(array, predicate=huanghun666.identity, fromIndex=array.length-1) {
+    var temp = this.iteratee(predicate)
+    for (var i = fromIndex; i >=0; i--) {
+      if (temp(array[i])) {
+        return i
+      }
+    }
+      return -1
   },
 
 
