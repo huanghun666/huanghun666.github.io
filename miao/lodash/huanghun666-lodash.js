@@ -38,7 +38,7 @@ var huanghun666 = {
 
   differenceBy: function(array, values, iteratee= huanghun666.identity) {
     let init = huanghun666.iteratee(iteratee)
-    Newvalue = values.map(it =>init(it))
+    let Newvalue = values.map(it =>init(it))
     return array.filter(it => !Newvalue(init(it)))
   },
 
