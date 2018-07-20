@@ -47,7 +47,7 @@ var huanghun666 = {
       return sorthand
     }
     if (typeof sorthand === "string") {
-      return this.matches(sorthand)
+      return this.property(sorthand)
     }
     if (Array.isArray(sorthand)) {
       return this.matchesProperty(sorthand)
