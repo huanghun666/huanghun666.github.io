@@ -38,7 +38,7 @@ var huanghun666 = {
 
   differenceBy: function(array, values, iteratee= huanghun666.identity) {
     var init = huanghun666.iteratee(iteratee)
-    var copyvalue = values.map(item =>init(item))
+    copyvalue = values.map(item =>init(item))
     return array.filter(item => !copyvalue(init(item)))
   },
 
