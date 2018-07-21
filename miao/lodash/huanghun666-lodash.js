@@ -169,9 +169,10 @@ var huanghun666 = {
     var result = []
     arguments[0].forEach(value => {
       if (arguments[1].indexOf(value) !== -1) {
-        return result.push(value)
+        result.push(value)
       }
     })
+    return result
   },
 
   intersectionBy(arrays, iteratee=huanghun666.identity) {
