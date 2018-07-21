@@ -164,14 +164,16 @@ var huanghun666 = {
     var result= array.splice(array.length-1,1)
     return array
   },
+
   intersection:function(...arrays) {
     var result = []
-    arguments[0]forEach(value => {
+    arguments[0].forEach(value => {
       if (arguments[1].indexOf(value) !== -1) {
         return result.push(value)
       }
     })
   },
+
   intersectionBy(arrays, iteratee=huanghun666.identity) {
     var result = []
     var temp = this.iteratee(iteratee)
@@ -193,6 +195,7 @@ var huanghun666 = {
   last:function(array) {
     return array[array.length-1]
   },
+  
   lastIndexOf: function(array, value, fromIndex=array.length-1) {
     for (var i = fromIndex; i >=0; i--) {
       if (array[i] === value) {
