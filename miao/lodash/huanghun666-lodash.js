@@ -220,8 +220,16 @@ var huanghun666 = {
         }
     }
   },
-  pull:function(array, ...values) {
-    
+  pull: function(array, ...values) {
+    return array.filter(item => values.indexOf(item) === -1)
+  },
+  pullAll: function(array, values) {
+    return array.filter(item => values.indexOf(item) === -1)
+  },
+  pullAllBy: function(array, values, iteratee=huanghun666.identity) {
+    var func = huanghun666.iteratee(iteratee)
+    var newValues = values.map(x => func(x))
+    return array.filter(item => huanghun666.indexOf(newValues, func(item)) === -1)
   },
 
   matchesProperty: function(path, srcValue) {
