@@ -165,6 +165,57 @@ var huanghun666 = {
     return array
   },
   intersection:function(...arrays) {
+    var result = []
+    arguments[0]forEach(value => {
+      if (arguments[1].indexOf(value) !== -1) {
+        return result.push(value)
+      }
+    })
+  },
+  intersectionBy(arrays, iteratee=huanghun666.identity) {
+    var result = []
+    var temp = this.iteratee(iteratee)
+    temp(arguments[0]forEach(value => {
+      if (arguments[1].indexOf(value) !== -1) {
+        return result.push(value)
+      }
+    }))
+  },
+
+  join:function(array, separator=',') {
+    var result = '' + array[0]
+    for (var i = 1; i < array.length; i++) {
+        result += String(separator) + array[i]
+    }
+    return result
+  },
+
+  last:function(array) {
+    return array[array.length-1]
+  },
+  lastIndexOf: function(array, value, fromIndex=array.length-1) {
+    for (var i = fromIndex; i >=0; i--) {
+      if (array[i] === value) {
+        return i
+      }
+    }
+     return -1
+  },
+  
+  nth:function(array, n=0) {
+    for (var i = 0; i <array.length; i++) {
+      if (n>=0) {
+        if (i = n) {
+          return array[i]
+        } 
+      } else{
+          if (i = array.length-Math.abs(n)) {
+            return array[i]
+          } 
+        }
+    }
+  },
+  pull:function(array, ...values) {
     
   },
 

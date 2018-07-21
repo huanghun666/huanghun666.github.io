@@ -1,11 +1,19 @@
-<script type="text/javascript">
-  var initial= function(array) {
-    debugger
-    var result= array.splice(array.length-1,1)
-    return array
-  };
-    console.log(initial([1, 2, 3]))
-</script>
+ <script type="text/javascript">
+  var iteratee: function(sorthand =huanghun666.iteratee) {
+    if (typeof sorthand === "function") {
+      return sorthand
+    }
+    if (typeof sorthand === "string") {
+      return this.matches(sorthand)
+    }
+    if (Array.isArray(sorthand)) {
+      return this.matchesProperty(sorthand)
+    }
+    if (typeof sorthand === "object") {
+      return this.matches(sorthand)
+    }
+  }
+ </script> 
 
 
 
