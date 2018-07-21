@@ -178,11 +178,12 @@ var huanghun666 = {
   intersectionBy(arrays, iteratee=huanghun666.identity) {
     var result = []
     var temp = this.iteratee(iteratee)
-    temp(arguments[0]forEach(value => {
+    temp(arguments[0].forEach(value => {
       if (arguments[1].indexOf(value) !== -1) {
-        return result.push(value)
+        result.push(value)
       }
     }))
+    return result
   },
 
   join:function(array, separator=',') {
