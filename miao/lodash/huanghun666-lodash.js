@@ -357,6 +357,8 @@ var huanghun666 = {
         }
     }
   },
+
+
   findLast: function(collection, predicate=huanghun666.identity, fromIndex=collection.length-1) {
     var temp = this.iteratee(predicate)
     for (var i = collection.length-1; i >=fromIndex; i--) {
@@ -365,6 +367,7 @@ var huanghun666 = {
         }
     }
   },
+
   forEach: function(collection, iteratee=huanghun666.identity) {
     for (var value in collection) {
       if (collection[value] === false) {
@@ -418,6 +421,7 @@ var huanghun666 = {
         }
       }
   },
+  
   before: function(n,func) {
     var conter =0
       return function() {
