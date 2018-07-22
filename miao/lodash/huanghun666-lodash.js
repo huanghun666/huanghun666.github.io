@@ -176,14 +176,7 @@ var huanghun666 = {
   },
 
   intersectionBy(arrays, iteratee=huanghun666.identity) {
-    var result = []
-    var temp = this.iteratee(iteratee)
-    temp(arguments[0].forEach(value => {
-      if (arguments[1].indexOf(value) !== -1) {
-        result.push(value)
-      }
-    }))
-    return result
+
   },
 
   join:function(array, separator=',') {
@@ -339,8 +332,47 @@ var huanghun666 = {
         return !func()
       }
   },
-  every:function(collection, predicate=_.identity) {
-
+  every:function(collection, predicate=huanghun666.identity) {
+    var temp = this.iteratee(predicate)
+    for (var value of collection) {
+      if (!temp(value)) return false
+    }
+      return true
+  },
+  filter: function(collection, predicate=huanghun666.identity) {
+    var result =[]
+    var temp = this.iteratee(predicate)
+    for (var value of collection) {
+      if (temp(value)) {
+        result.push(value)
+      } 
+    }
+      return result
+  },
+  find: function(collection, predicate=huanghun666.identity, fromIndex=0) {
+    var temp = this.iteratee(predicate)
+    for (var i = fromIndex; i < collection.length; i++) {
+        if (predicate(collection[i])) {
+            return collection[i]
+        }
+    }
+  },
+  findLast: function(collection, predicate=huanghun666.identity, fromIndex=collection.length-1) {
+    var temp = this.iteratee(predicate)
+    for (var i = collection.length-1; i >=fromIndex; i--) {
+        if (predicate(collection[i])) {
+            return collection[i]
+        }
+    }
+  },
+  forEach: function(collection, iteratee=huanghun666.identity) {
+    for (var val in collection) {
+      if (collection[value] === false) {
+        break;
+      }
+        iteratee(collection[value])
+    }
+    return collection
   },
   groupBy:function(ary, predicate) {
     var map = {}
@@ -355,6 +387,15 @@ var huanghun666 = {
     }
 
       return map
+  },
+  keyBy: function(collection, iteratee=huanghun666.identity) {
+    var map ={}
+    var temp = this.iteratee(iteratee)
+    for (var i in collection) {
+        var key = temp(collection[i])
+        map[key] = collection[i]
+    }
+    return map
   },
 
   flip: function(func) {
