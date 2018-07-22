@@ -272,8 +272,12 @@ var huanghun666 = {
     var temp = array.reverse()
     return temp.indexOf(value)
   },
-  sortedLastIndexBy: function(array, value, iteratee=_.identity) {
-    var 
+  sortedLastIndexBy: function(array, value, iteratee=huanghun666.identity) {
+    
+  },
+
+  sortedLastIndexOf: function(array, value) {
+
   },
 
   matchesProperty: function(path, srcValue) {
