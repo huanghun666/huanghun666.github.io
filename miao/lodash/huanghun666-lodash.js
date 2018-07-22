@@ -269,15 +269,30 @@ var huanghun666 = {
     return array.indexOf(value)
   },
   sortedLastIndex: function(array, value) {
-    var temp = array.reverse()
-    return temp.indexOf(value)
+    for (var i = array.length-1; i >=0; i--) {
+      if (array[i] <= value) {
+        return i+1
+      }
+    }
+      return 0
   },
+  
   sortedLastIndexBy: function(array, value, iteratee=huanghun666.identity) {
-    
+    for (var i = array.length-1; i >=0; i--) {
+      if (temp(array[i]) <=temp(value)) {
+        return i+1
+      }
+    }
+      return 0
   },
 
   sortedLastIndexOf: function(array, value) {
-
+    for (var i = array.length-1; i >=0; i--) {
+      if (array[i] === value) {
+        return i
+      }
+    }
+      return -1
   },
 
   matchesProperty: function(path, srcValue) {
@@ -323,11 +338,14 @@ var huanghun666 = {
         return !func()
       }
   },
+  every:function(collection, predicate=_.identity) {
+
+  },
   groupBy:function(ary, predicate) {
     var map = {}
-
+    var temp = this.iteratee(predicate)
     for(var item of ary) {
-      var key = predicate(item)
+      var key = temp(item)
       if (key in map) {
         map[key].push(item)
       } else {
