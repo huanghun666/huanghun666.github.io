@@ -352,7 +352,7 @@ var huanghun666 = {
   find: function(collection, predicate=huanghun666.identity, fromIndex=0) {
     var temp = this.iteratee(predicate)
     for (var i = fromIndex; i < collection.length; i++) {
-        if (predicate(collection[i])) {
+        if (temp(collection[i])) {
             return collection[i]
         }
     }
@@ -360,13 +360,13 @@ var huanghun666 = {
   findLast: function(collection, predicate=huanghun666.identity, fromIndex=collection.length-1) {
     var temp = this.iteratee(predicate)
     for (var i = collection.length-1; i >=fromIndex; i--) {
-        if (predicate(collection[i])) {
+        if (temp(collection[i])) {
             return collection[i]
         }
     }
   },
   forEach: function(collection, iteratee=huanghun666.identity) {
-    for (var val in collection) {
+    for (var value in collection) {
       if (collection[value] === false) {
         break;
       }
