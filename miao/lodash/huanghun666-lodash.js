@@ -278,6 +278,7 @@ var huanghun666 = {
   },
   
   sortedLastIndexBy: function(array, value, iteratee=huanghun666.identity) {
+    var temp = huanghun666.iteratee(iteratee)
     for (var i = array.length-1; i >=0; i--) {
       if (temp(array[i]) <=temp(value)) {
         return i+1
