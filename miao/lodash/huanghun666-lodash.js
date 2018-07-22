@@ -97,7 +97,7 @@ var huanghun666 = {
       return array
   },
   findIndex:function(array, predicate=huanghun666.identity, fromIndex=0) {
-        var temp = this.iteratee(predicate)
+    var temp = this.iteratee(predicate)
     for (var i = fromIndex; i <array.length; i++) {
       if (temp(array[i])) {
         return i
@@ -227,9 +227,53 @@ var huanghun666 = {
     return array.filter(item => values.indexOf(item) === -1)
   },
   pullAllBy: function(array, values, iteratee=huanghun666.identity) {
-    var func = huanghun666.iteratee(iteratee)
-    var newValues = values.map(x => func(x))
-    return array.filter(item => huanghun666.indexOf(newValues, func(item)) === -1)
+    var temp = huanghun666.iteratee(iteratee)
+    var newValues = values.map(x => temp(x))
+    return array.filter(item => huanghun666.indexOf(newValues, temp(item)) === -1)
+  },
+  pullAllWith:function(array, values, comparator) {
+    return array.filter(item => {
+      for (var i = 0; i < values.length; i++) {
+        if(comparator(item, values[i])) {
+          return false
+        }
+      }
+        return true
+    })
+  },
+  reverse: function(array) {
+    result =[]
+    for (var i = array.length - 1; i >= 0; i--) {
+      result.push(array[i])
+    }
+    return result
+  },
+  sortedIndex: function(array, value) {
+    for (var i = 0; i <array.length; i++) {
+      if (array[i] >= value) {
+        return i
+      }
+    }
+      return array.length
+  },
+  sortedIndexBy: function(array, value, iteratee=huanghun666.identity) {
+    var temp = huanghun666.iteratee(iteratee)
+      for (var i = 0; i <array.length; i++) {
+        if (temp(array[i]) >= temp(value)) {
+          return i
+        }
+      }
+        return array.length
+  },
+  sortedIndexOf: function(array, value) {
+    return array.indexOf(value)
+  },
+  sortedLastIndex: function(array, value) {
+    var temp = array.reverse()
+    return temp.indexOf(value)
+  },
+  sortedLastIndexBy: function(array, value, iteratee=_.identity) {
+    var 
   },
 
   matchesProperty: function(path, srcValue) {
