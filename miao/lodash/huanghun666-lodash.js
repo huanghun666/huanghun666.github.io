@@ -361,7 +361,7 @@ var huanghun666 = {
 
   findLast: function(collection, predicate=huanghun666.identity, fromIndex=collection.length-1) {
     var temp = this.iteratee(predicate)
-    for (var i = collection.length-1; i >=fromIndex; i--) {
+    for (var i = fromIndex; i >=0; i--) {
         if (temp(collection[i])) {
             return collection[i]
         }
@@ -377,6 +377,30 @@ var huanghun666 = {
     }
     return collection
   },
+  map: function(collection, iteratee=huanghun666.identity) {
+    iteratee = this.iteratee(iteratee)
+    return reduce(array, (result, value, index, arr) => {
+        result.push(iteratee(value, index, arr))
+        return result
+    }, [])
+  },
+  reduce: function(collection, iteratee=huanghun666.identity, accumulator =0) {
+
+  },
+  isMatch: function(object, source) {
+    if (typeof object !== 'object' || typeof source !== 'object') {
+        return false
+    }
+    for (let key in source) {
+        if (object[key] !== source[key]) {
+            if (!isMatch(object[key], source[key])) {
+                return false
+            }
+        }
+    }
+    return true
+  },
+
   groupBy:function(ary, predicate) {
     var map = {}
     var temp = this.iteratee(predicate)
