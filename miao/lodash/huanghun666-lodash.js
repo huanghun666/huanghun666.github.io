@@ -379,13 +379,13 @@ var huanghun666 = {
   },
   map: function(collection, iteratee=huanghun666.identity) {
     iteratee = this.iteratee(iteratee)
-    return reduce(array, (result, value, index, arr) => {
-        result.push(iteratee(value, index, arr))
+    return reduce(collection, (result, value, index, collection) => {
+        result.push(iteratee(value, index, collection))
         return result
     }, [])
   },
   reduce: function(collection, iteratee=huanghun666.identity, accumulator =0) {
-
+    
   },
   isMatch: function(object, source) {
     if (typeof object !== 'object' || typeof source !== 'object') {
@@ -393,7 +393,7 @@ var huanghun666 = {
     }
     for (let key in source) {
         if (object[key] !== source[key]) {
-            if (!isMatch(object[key], source[key])) {
+            if (!this.isMatch(object[key], source[key])) {
                 return false
             }
         }
