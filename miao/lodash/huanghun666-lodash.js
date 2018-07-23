@@ -379,7 +379,7 @@ var huanghun666 = {
   },
   map: function(collection, iteratee=huanghun666.identity) {
     iteratee = this.iteratee(iteratee)
-    return reduce(collection, (result, value, index, collection) => {
+    return collection.reduce(collection, (result, value, index, collection) => {
         result.push(iteratee(value, index, collection))
         return result
     }, [])
