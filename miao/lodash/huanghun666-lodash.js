@@ -349,6 +349,7 @@ var huanghun666 = {
     }
       return result
   },
+  
   find: function(collection, predicate=huanghun666.identity, fromIndex=0) {
     var temp = this.iteratee(predicate)
     for (var i = fromIndex; i < collection.length; i++) {
@@ -377,6 +378,7 @@ var huanghun666 = {
     }
     return collection
   },
+
   map: function(collection, iteratee=huanghun666.identity) {
     iteratee = this.iteratee(iteratee)
     return collection.reduce(collection, (result, value, index, collection) => {
@@ -391,6 +393,7 @@ var huanghun666 = {
     }
     return accumulator
   },
+
   
   isMatch: function(object, source) {
     if (typeof object !== 'object' || typeof source !== 'object') {
@@ -405,6 +408,7 @@ var huanghun666 = {
     }
     return true
   },
+
   some: function(collection, predicate=huanghun666.identity) {
     var temp = this.iteratee(predicate)
     for (var value of collection) {
@@ -424,9 +428,9 @@ var huanghun666 = {
         map[key] = [item]
       }
     }
-
       return map
   },
+
   keyBy: function(collection, iteratee=huanghun666.identity) {
     var map ={}
     var temp = this.iteratee(iteratee)
