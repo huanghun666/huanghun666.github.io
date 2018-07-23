@@ -384,6 +384,7 @@ var huanghun666 = {
         return result
     }, [])
   },
+
   reduce: function(collection, iteratee=huanghun666.identity, accumulator =0) {
     
   },
@@ -399,6 +400,13 @@ var huanghun666 = {
         }
     }
     return true
+  },
+  some: function(collection, predicate=huanghun666.identity) {
+    var temp = this.iteratee(predicate)
+    for (var value of collection) {
+      if (temp(value)) return true
+    }
+      return false
   },
 
   groupBy:function(ary, predicate) {
