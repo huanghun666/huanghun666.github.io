@@ -17,6 +17,7 @@ var huanghun666 = {
     }
     return result
   },
+  
   concat: function(array,...value) {
     var result = []
     for(var item of array){
@@ -152,6 +153,7 @@ var huanghun666 = {
   head: function(array) {
     return array[0]
   },
+
   indexOf: function(array, value, fromIndex=0) {
     for (var i = fromIndex; i < array.length; i++) {
       if (array[i] === value) {
@@ -160,6 +162,7 @@ var huanghun666 = {
     }
      return -1
   },
+
   initial: function(array) {
     var result= array.splice(array.length-1,1)
     return array
@@ -213,17 +216,21 @@ var huanghun666 = {
         }
     }
   },
+
   pull: function(array, ...values) {
     return array.filter(item => values.indexOf(item) === -1)
   },
+
   pullAll: function(array, values) {
     return array.filter(item => values.indexOf(item) === -1)
   },
+
   pullAllBy: function(array, values, iteratee=huanghun666.identity) {
     var temp = huanghun666.iteratee(iteratee)
     var newValues = values.map(x => temp(x))
     return array.filter(item => huanghun666.indexOf(newValues, temp(item)) === -1)
   },
+
   pullAllWith:function(array, values, comparator) {
     return array.filter(item => {
       for (var i = 0; i < values.length; i++) {
@@ -234,6 +241,7 @@ var huanghun666 = {
         return true
     })
   },
+
   reverse: function(array) {
     result =[]
     for (var i = array.length - 1; i >= 0; i--) {
@@ -241,6 +249,7 @@ var huanghun666 = {
     }
     return result
   },
+
   sortedIndex: function(array, value) {
     for (var i = 0; i <array.length; i++) {
       if (array[i] >= value) {
@@ -249,6 +258,7 @@ var huanghun666 = {
     }
       return array.length
   },
+
   sortedIndexBy: function(array, value, iteratee=huanghun666.identity) {
     var temp = huanghun666.iteratee(iteratee)
       for (var i = 0; i <array.length; i++) {
@@ -261,6 +271,7 @@ var huanghun666 = {
   sortedIndexOf: function(array, value) {
     return array.indexOf(value)
   },
+
   sortedLastIndex: function(array, value) {
     for (var i = array.length-1; i >=0; i--) {
       if (array[i] <= value) {
@@ -327,11 +338,13 @@ var huanghun666 = {
       return obj[path]
     }
   },
+
   negate: function(func) {
       return function(...args) {
         return !func()
       }
   },
+
   every:function(collection, predicate=huanghun666.identity) {
     var temp = this.iteratee(predicate)
     for (var value of collection) {
@@ -339,6 +352,7 @@ var huanghun666 = {
     }
       return true
   },
+
   filter: function(collection, predicate=huanghun666.identity) {
     var result =[]
     var temp = this.iteratee(predicate)
