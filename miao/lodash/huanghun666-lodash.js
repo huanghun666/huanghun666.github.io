@@ -386,8 +386,12 @@ var huanghun666 = {
   },
 
   reduce: function(collection, iteratee=huanghun666.identity, accumulator =0) {
-    
+    for(var i = 0; i<collection.length; i++) {
+      accumulator = iteratee(accumulator,collection[i],i, collection)
+    }
+    return accumulator
   },
+  
   isMatch: function(object, source) {
     if (typeof object !== 'object' || typeof source !== 'object') {
         return false
