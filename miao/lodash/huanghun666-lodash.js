@@ -430,6 +430,15 @@ var huanghun666 = {
     }
       return false
   },
+  max: function(array) {
+    if (array.length == 0) return undefined
+    return reduce(array, (res, item) => res > item ? res : item, -Infinity)
+  },
+  maxBy:function(array, iteratee=huanghun666.identity) {
+    var temp = this.iteratee(iteratee)
+    return reduce(array, (res,item) => temp(res) > temp(item) ? res : item, -Infinity)
+  },
+
 
   groupBy:function(ary, predicate) {
     var map = {}
